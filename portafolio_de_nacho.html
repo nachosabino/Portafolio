@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Manuel Ignacio Rodríguez</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-purple: #7952b3;
+            --accent-purple: #6f42c1;
+            --light-border: #dcdcdc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #fdfdfd;
+        }
+
+        /* Layout Grid */
+        .portfolio-container {
+            min-height: 100vh;
+        }
+
+        /* Left Fixed Image Column */
+        .sidebar-image-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            background-color: #1a1a1a;
+        }
+
+        .sidebar-image {
+            width: 100%;
+            height: 100%;
+            /* Recorta la imagen para enfocar la persona a la izquierda de la baranda */
+            object-fit: cover;
+            object-position: 25% center; 
+        }
+
+        /* Right Content Area with Scroll */
+        .main-content {
+            height: 100vh;
+            overflow-y: auto;
+            padding: 2rem 3rem;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Cards & Boxes */
+        .logo-box {
+            background-color: #f8f9fa;
+            border: 2px solid var(--primary-purple);
+            border-radius: 12px;
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .logo-text {
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Category Buttons */
+        .btn-category {
+            border: 2px solid var(--primary-purple);
+            color: var(--primary-purple);
+            background: transparent;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-category:hover, .btn-category.active {
+            background-color: var(--primary-purple);
+            color: white;
+            box-shadow: 0 4px 12px rgba(121, 82, 179, 0.3);
+        }
+
+        /* Dynamic Expandable Content Detail Box */
+        .content-detail-box {
+            border: 2px solid var(--primary-purple);
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* Placeholder Content Cards in Carousel */
+        .carousel-card {
+            border: 2px solid #92e4f5;
+            background-color: #fff8e7;
+            border-radius: 12px;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(166, 142, 226, 0.25);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 767.98px) {
+            .sidebar-image-container {
+                height: 450px;
+            }
+            .main-content {
+                height: auto;
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        .shadow-top {box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1) !important;}
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid portfolio-container">
+        <div class="row g-0">
+            
+            <!-- ========================================== -->
+            <!-- COLUMNA IZQUIERDA: IMAGEN ESTÁTICA / FIJA -->
+            <!-- ========================================== -->
+            <div class="col-md-4 col-lg-3 sidebar-image-container">
+                <!-- Tu imagen recortada para enfocarte a ti en el balcón -->
+                <img src="./foto perfil.png" 
+                     alt="Manuel Ignacio Rodríguez" 
+                     class="sidebar-image"
+                     id="static-profile-img">
+                <!-- NOTA: Reemplaza la propiedad 'src' de arriba con la ruta local o URL de tu foto de la segunda imagen. 
+                     Ejemplo: src="img/mi-foto.jpg" -->
+            </div>
+
+            <!-- ========================================== -->
+            <!-- COLUMNA DERECHA: ZONA DE CONTENIDO CON SCROLL -->
+            <!-- ========================================== -->
+            <div class="col-md-8 col-lg-9 main-content">
+                
+                <!-- Encabezado y Presentación -->
+                <div class="text-center my-4">
+                    <h1 class="display-4 fw-bold mb-3">¡Hola! Soy Nacho</h1>
+                    <p class="text-muted mx-auto" style="max-width: 650px; line-height: 1.6;">
+                        Mi nombre es Manuel Ignacio Rodríguez, de Colombia, si estás viendo esto, mi perfil puede haber llamado tu atención, tengo conocimiento en muchas áreas, actualmente me encuentro en proceso de ser un desarrollador y analista de datos.
+                    </p>
+                    
+                    <!-- Logo Container -->
+                    <div class="my-4">
+                        <div class="logo-box">
+                            <span class="logo-text">&lt;/Riwi&gt;</span>
+                        </div>
+                        <p class="text-muted small mt-2">Este es mi portafolio, Bienvenido</p>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- BOTONES DESPLEGABLES INTERACTIVOS -->
+                <!-- ========================================== -->
+                <div class="row g-3 justify-content-center my-4" id="category-buttons">
+                    <div class="col-12 col-sm-4 col-md-3">
+                        <button class="btn btn-category" data-bs-toggle="collapse" data-bs-target="#collapseAlgoritmitia" aria-expanded="false" aria-controls="collapseAlgoritmitia">
+                            Algoritmia 1
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-3">
+                        <button class="btn btn-category" data-bs-toggle="collapse" data-bs-target="#collapseFrontend" aria-expanded="false" aria-controls="collapseFrontend">
+                            Frontend
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-3">
+                        <button class="btn btn-category" data-bs-toggle="collapse" data-bs-target="#collapseIA" aria-expanded="false" aria-controls="collapseIA">
+                            IA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- CUADROS DE CONTENIDO DESPLEGABLE (COLLAPSE) -->
+                <!-- Rodarán suavemente el carrusel hacia abajo -->
+                <!-- ========================================== -->
+                <div class="accordion-group my-3">
+                    
+                    <!-- Desplegable 1: Algoritmia 1 -->
+                    <div class="collapse multi-collapse" id="collapseAlgoritmitia" data-bs-parent="#category-buttons">
+                        <div class="content-detail-box">
+                            <h4 class="fw-bold text-purple"><i class="fa-solid fa-code me-2"></i>Algoritmia 1</h4>
+                            <p class="text-secondary">Este es el inicio del entendimiento de las funciones programaticas</p>
+                            <hr>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Semana 1</h6>
+                                        <a href="https://github.com/nachosabino/Algoritmia-clase-1/tree/main/Semana1" target="_blank"> Semana1.git</a>
+                                        <p class="small text-muted mb-0">Primeros pasos Saludo, Prepara un café.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Semana 2</h6>
+                                        <a href="https://github.com/nachosabino/Algoritmia-clase-1/tree/main/Semana2" target="_blank"> Semana2.git</a>
+                                        <p class="small text-muted mb-0">Calculos matematicos, mayor, menor o igual</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Semana 3</h6>
+                                        <a href="https://github.com/nachosabino/Algoritmia-clase-1/tree/main/Semana3" target="_blank"> Semana2.git</a>
+                                        <p class="small text-muted mb-0">Repite hasta, Subproceso, Cuanto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desplegable 2: Frontend -->
+                    <div class="collapse multi-collapse" id="collapseFrontend" data-bs-parent="#category-buttons">
+                        <div class="content-detail-box">
+                            <h4 class="fw-bold text-purple"><i class="fa-solid fa-laptop-code me-2"></i>Frontend</h4>
+                            <p class="text-secondary">Explora mis diseños e interfaces web construidos con HTML, CSS, JavaScript y Bootstrap.</p>
+                            <hr>
+                            <!-- REEMPLAZA O AÑADE TU CONTENIDO AQUÍ -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Rueda-Libre</h6>
+                                        <a href="https://github.com/nachosabino/rueda-libre.git" target="_blank"> Rueda-libre.git</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Rueda-Nocturna</h6>
+                                        <a href="https://github.com/nachosabino/rueda-libre.git" target="_blank"> Lo veras en el apartado Rutas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desplegable 3: IA -->
+                    <div class="collapse multi-collapse" id="collapseIA" data-bs-parent="#category-buttons">
+                        <div class="content-detail-box">
+                            <h4 class="fw-bold text-purple"><i class="fa-solid fa-robot me-2"></i>Inteligencia Artificial</h4>
+                            <p class="text-secondary">Conoce mi primer proyecto de IA, prompts y mis primeros pasos en Data Science e IA Generativa.</p>
+                            <hr>
+                            <!-- REEMPLAZA O AÑADE TU CONTENIDO AQUÍ -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Semana 1</h6>
+                                         <a href="https://github.com/nachosabino/IAsemana1.git" target="_blank"> Ejercicios Semana 1</a>
+                                        <p class="small text-muted mb-0">Conceptos, mapa conceptual, Ejercicio de orden numerico.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Semana 2</h6>
+                                         <a href="https://github.com/nachosabino/IAsemana2.git" target="_blank"> Ejercicios Semana 2</a>
+                                        <p class="small text-muted mb-0">Preguntas a diferentes IA, Orden numerico Python3, README</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded bg-light">
+                                        <h6 class="fw-bold">Proyecto IA</h6>
+                                         <a href="https://github.com/nachosabino/ClaseIA.git" target="_blank"> INWIT</a>
+                                        <p class="small text-muted mb-0">Pagina de IA con uso de IA integrada "INWIT"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ========================================== -->
+                <!-- CARRUSEL DE CONTENIDO / SECCIÓN DE TARJETAS -->
+                <!-- ========================================== -->
+                <div class="my-5">
+                    <h5 class="text-muted mb-3 text-center"><i class="fa-solid fa-layer-group me-2"></i>Proyectos Destacados</h5>
+                    
+                    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner p-2">
+                            
+                            <!-- CARRUSEL-->
+                            <div class="carousel-item active">
+                                <div class="row g-3">
+                                    <!-- Rueda Libre-->
+                                    <div class="col-6 col-md-6">
+                                        <div class="carousel-card p-3 text-center">
+                                           
+                                            <span class="fw-bold text-dark">Rueda-Libre</span>
+                                            <img src="./Imagenes/Fondo-Rueda-Libre.png"
+                    alt="Imagen de referencia" class="img-fluid w-100 object-fit-cover">                            
+                                        </div>
+                                    </div>
+                                    <!-- Cuadro Vacío 2 -->
+                                    <div class="col-6 col-md-6">
+                                        <div class="carousel-card p-3 text-center">
+                                            
+                                            <span class="fw-bold text-dark">Inwit</span>
+                                            <img src="./Imagenes/Inwit.png" alt="Imagen de referencia" class="img-fluid w-100 object-fit-cover">  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 del Carrusel -->
+                            <div class="carousel-item">
+                                <div class="row g-3">
+                                    <!-- Cuadro Vacío 3 -->
+                                    <div class="col-6 col-md-6">
+                                        <div class="carousel-card p-3 text-center">
+                                            <i class="fa-regular fa-square-plus fa-2x text-warning mb-2"></i>
+                                            <span class="fw-bold text-dark">Cuadro Vacío 3</span>
+                                            <small class="text-muted">(Añade tu proyecto aquí)</small>
+                                        </div>
+                                    </div>
+                                    <!-- Cuadro Vacío 4 -->
+                                    <div class="col-6 col-md-6">
+                                        <div class="carousel-card p-3 text-center">
+                                            <i class="fa-regular fa-square-plus fa-2x text-warning mb-2"></i>
+                                            <span class="fw-bold text-dark">Cuadro Vacío 4</span>
+                                            <small class="text-muted">(Añade tu proyecto aquí)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Controles del Carrusel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" style="width: 5%; filter: invert(100%);">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" style="width: 5%; filter: invert(100%);">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para asegurar comportamiento exclusivo de los desplegables y animaciones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn-category');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    
+                    // Si se hace clic en un botón que no está activo, marcarlo
+                    const targetId = this.getAttribute('data-bs-target');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (!targetElement.classList.contains('show')) {
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+<footer id="footer" class="footer" style="background-color: #7952b3; color: #fff; padding: 20px; text-align: center; justify-content: space-between;"
+p-4 mt-3 bg-black shadow-top" >
+    <h2><strong>CONTACTO</strong></h2>
+    <a href="https://wa.me/573000000000" target="_blank" >WhatsApp</a>
+        <img src="./Imagenes/logowhatsapp.avif" 
+        alt="WhatsApp" style="width: 60px; height: 60px; margin-left: 10px; margin-right: 40px;
+        border-radius: 10px; vertical-align: middle;"></img>
+
+    <a href="https://www.instagram.com/rueda_libre/" target="_blank" >Instagram</a>
+        <img src="./Imagenes/instagram.jpeg" alt="Instagram" style="width: 60px; height: 60px; margin-left: 10px;
+        border-radius: 10px; margin-right: 40px; vertical-align: middle; "></img>
+
+    <a href="https://github.com/nachosabino" target="_blank"> Ve mis proyectos en GITHUB</a>
+        <img src="./Imagenes/github-6980894_960_720.webp" alt="Tiktok" style="width: 60px; height: 60px; margin-left: 10px;
+        border-radius: 10px; vertical-align: middle;"></img>
+
+
+</footer>
+
+</body>
+</html>
